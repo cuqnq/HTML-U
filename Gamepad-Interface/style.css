@@ -1,0 +1,57 @@
+/* Reset and center everything on the page */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  display: grid;               /* centers the deck */
+  place-items: center;         /* vertical and horizontal centering */
+  background: #e8dfd4;         /* light background */
+  font-family: system-ui, Arial;
+}
+
+/* The whole handheld (container) */
+.deck{
+  width: 90vw;                 /* take 90% of the screen width */
+  max-width: 2200px;           /* do not get bigger than this on large screens */
+  min-width: 600px;            /* do not get smaller than this on small screens */
+  aspect-ratio: 16 / 7;        /* keep a wide handheld shape */
+  border-radius: 24px;         /* round the corners */
+  background: #0f1117;         /* dark shell color */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+
+  /* Put three columns inside: left grip, screen, right grip */
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* middle column is the screen */
+  gap: 16px;                   /* space between columns */
+  padding: 16px;               /* inner spacing around the edges */
+}
+
+/* Left and right grip panels */
+.grip{
+  background: #171a23;
+  border-radius: 16px;
+}
+
+/* Middle screen panel */
+.screen{
+  background: #0b0e12;         /* black screen color */
+  border-radius: 12px;
+}
+
+/* Small screens: stack everything vertically */
+@media (max-width: 600px){
+  .deck{
+    grid-template-columns: 1fr; /* one column only */
+    aspect-ratio: auto;         /* let the height grow normally */
+    padding: 12px;
+  }
+
+  /* Give simple heights when stacked */
+  .grip{
+    height: 20vh;               /* 20% of the viewport height */
+    min-height: 120px;
+  }
+  .screen{
+    height: 40vh;               /* 40% of the viewport height */
+    min-height: 180px;
+  }
+}
