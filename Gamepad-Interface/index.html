@@ -8,9 +8,14 @@
 </head>
 <body>
   <div class="deck">
-    <div class="grip left"></div>
+    <div class="grip left">
+      <div id="joystick-area" class="joystick-area">
+        <div id="joystick-knob" class="joystick-knob"></div>
+      </div>
+    </div>
+
     <div class="screen">
-        <div class="home">
+      <div class="home">
         <div class="home-grid">
           <a class="tile" href="#">
             <div class="icon blue"></div>
@@ -20,8 +25,13 @@
             <div class="icon red"></div>
             <span class="label">Game 2</span>
           </a>
+        </div>
+      </div>
     </div>
+
     <div class="grip right"></div>
   </div>
+
+  <script src="joystick.js"></script>
 </body>
 </html>
