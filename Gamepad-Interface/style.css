@@ -1,75 +1,44 @@
-/* Reset and center everything on the page */
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
+/* 1. Background layer */
 body {
-  display: grid;               /* centers the deck */
-  place-items: center;         /* vertical and horizontal centering */
-  background: #e8dfd4;         /* light background */
-  font-family: system-ui, Arial;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;             /* full screen */
+  background: linear-gradient(135deg, #db8c8c, #444); /* subtle gradient background */
 }
 
-/* The whole handheld (container) */
-.deck{
-  width: 90vw;                 /* take 90% of the screen width */
-  max-width: 2200px;           /* do not get bigger than this on large screens */
-  min-width: 600px;            /* do not get smaller than this on small screens */
-  aspect-ratio: 16 / 7;        /* keep a wide handheld shape */
-  border-radius: 24px;         /* round the corners */
-  background: #0f1117;         /* dark shell color */
-  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-
-  /* Put three columns inside: left grip, screen, right grip */
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* middle column is the screen */
-  gap: 16px;                   /* space between columns */
-  padding: 16px;               /* inner spacing around the edges */
+/* 2. Rectangle (Gamepad) */
+.gamepad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1e90ff;        /* blue rectangle */
+  width: 800px;               /* wide shape */
+  height: 400px;              /* shorter height */
+  border-radius: 75px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* shadow for depth */
 }
 
-/* Left and right grip panels */
-.grip{
-  background: #171a23;
-  border-radius: 16px;
+.screen-border{
+  width: 430px;
+  height: 300px;
+  background: red;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Middle screen panel */
-.screen{
-  background: #0b0e12;         /* black screen color */
-  border-radius: 12px;
+.screen {
+  width: 400px;
+  height: 280px;
+  background: #333;           /* dark gray screen */
+  border-radius: 0px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6) inset; /* inner shadow for realism */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Small screens: stack everything vertically */
-@media (max-width: 600px){
-  .deck{
-    grid-template-columns: 1fr; /* one column only */
-    aspect-ratio: auto;         /* let the height grow normally */
-    padding: 12px;
-  }
 
-  /* Give simple heights when stacked */
-  .grip{
-    height: 20vh;               /* 20% of the viewport height */
-    min-height: 120px;
-  }
-  .screen{
-    height: 40vh;               /* 40% of the viewport height */
-    min-height: 180px;
-  }
-}
-
-.joystick-area {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 2px solid gray;
-  position: relative;
-}
-
-.joystick-knob {
-  width: 50px;
-  height: 50px;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  left: 35px;
-  top: 35px;
-}
