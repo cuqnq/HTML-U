@@ -4,28 +4,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;             /* full screen */
+  height: 100vh; /* full screen */
   background: linear-gradient(135deg, #db8c8c, #444); /* subtle gradient background */
 }
 
+
 /* 2. Rectangle (Gamepad) */
 .gamepad {
-  display: flex;
   position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background: #1e90ff;        /* blue rectangle */
-  width: 800px;               /* wide shape */
-  height: 400px;              /* shorter height */
+  width: 1000px; /* wide shape */
+  height: 600px; /* shorter height */
+  background: #1e90ff; /* blue rectangle */
   border-radius: 75px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* shadow for depth */
 }
 
-.screen-border{
+
+/* Screen border */
+.screen-border {
   position: absolute;
   top: 60px;
-  width: 430px;
-  height: 300px;
+  width: calc(100% - 370px); /*Originally 630 px;*/
+  height: calc(100% - 100px); /*Originally 500 px*/
   background: red;
   border-radius: 15px;
   display: flex;
@@ -33,30 +36,76 @@ body {
   align-items: center;
 }
 
+
+/* Screen */
 .screen {
-  width: 400px;
-  height: 280px;
-  background: #333;           /* dark gray screen */
-  border-radius: 0px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6) inset; /* inner shadow for realism */
+  width: calc(100% - 30px); /* Originally 600 px*/
+  height: calc(100% - 20px); /*Originally 480 px*/
+  background: #333;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.camera-border{
-  position: absolute;
+/* move these OUT of .screen {} */
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
   display: flex;
+}
+
+section {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;     
+  height: 100%;    
+  scroll-snap-align: start;
+}
+
+section:nth-of-type(1) {
+  background: rgb(28,28,28);
+  color: green;
+}
+
+section:nth-of-type(2) {
+  background: rgb(163, 7, 224);
+  color: blue;
+}
+
+section:nth-of-type(3) {
+  background: rgb(214, 29, 29);
+  color: yellow;
+}
+
+
+
+
+
+
+
+
+
+/* Camera border */
+.camera-border {
+  position: absolute;
   top: 10px;
   width: 220px;
   height: 33px;
   background: green;
   border-radius: 150px / 120px;
+  display: flex;
 }
 
-.camera{
 
+/* Camera */
+.camera {
 }
+
 
 /* Analog Sticks Section - Completely separate from screen */
 .analog-stick {
