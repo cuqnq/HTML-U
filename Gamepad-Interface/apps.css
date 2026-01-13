@@ -1,11 +1,16 @@
 .apps {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: auto auto;
+  /* grid-column-gap: 20px;
+  grid-row-gap: 20px; */
+  gap: 20px;
   justify-content: center;
   align-items: center;
 }
 
-.game-app {
+.general-apps {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,39 +18,49 @@
   user-select: none;
 }
 
-/*Controls the Size of the Applications*/ 
-.app-border {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 28px;
-}
-
-.music-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #8a2474, #00f2fe);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 28px;
-}
-
-.game-app:active .app-border {
+.general-apps:active .app-border {
   transform: scale(0.92);
 }
 
-.game-app:active .music-icon {
-  transform: scale(0.92);
-}
-
+/*The Title Style applied to each app*/
 .label {
   margin-top: 8px;
   font-size: 12px;
   color: white;
+}
+
+/*Controls the Size of the Applications*/ 
+.app-border {
+  width: 128px;
+  height: 128px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px; 
+}
+
+
+/*Gradient coloring for each app*/
+.game{
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+.music {
+  background: linear-gradient(135deg, #8a2474, #0ece47);
+}
+
+.settings{
+  background: linear-gradient(135deg, #40413e, #40413e);
+}
+
+.chess{
+  background: linear-gradient(135deg, #d0d311, #a8082b);
+}
+
+.placeholder_one{
+  background: linear-gradient(135deg, #fafafa, #f8f8f8);
+}
+
+.placeholder_two{
+  background: linear-gradient(135deg, #fafafa, #f8f8f8);
 }
