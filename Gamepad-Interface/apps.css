@@ -18,7 +18,7 @@
   user-select: none;
 }
 
-/*Gives the button clicking effect */
+/*Shrinks apps when clicked. Active ends when mouse is released*/
 .general-apps:active .app-border {
   transform: scale(0.92);
 }
@@ -39,6 +39,7 @@
   justify-content: center;
   align-items: center;
   font-size: 60px; 
+  transition: transform 0.2s ease;
 }
 
 
