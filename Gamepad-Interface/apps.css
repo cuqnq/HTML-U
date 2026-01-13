@@ -1,0 +1,51 @@
+.apps {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*Controls the Size of the Applications*/ 
+.app-border {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.music-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #8a2474, #00f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.game-app:active .app-border {
+  transform: scale(0.92);
+}
+
+.game-app:active .music-icon {
+  transform: scale(0.92);
+}
+
+.label {
+  margin-top: 8px;
+  font-size: 12px;
+  color: white;
+}
