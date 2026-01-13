@@ -18,6 +18,7 @@
   user-select: none;
 }
 
+/*Gives the button clicking effect */
 .general-apps:active .app-border {
   transform: scale(0.92);
 }
